@@ -89,6 +89,6 @@ GameExplorer est une application web interactive qui permet aux utilisateurs de 
 │ ├── favoris.js
 │ └── details.js
 │
-└── 📁 assets
+└── 📁 images
 └── images
 
