@@ -5,12 +5,18 @@ const next =document.querySelector("#next");
 
 // pour sauvegarder le next url
 let result ;
-let isload;
+//bach maw9a3ch lodin o loeding l2asli kayn
+let isload=0;
 
 async function getData(urlx){
+          if(isload===1){
+              return ;
+          }
             const loadingDiv = document.createElement('div');
             loadingDiv.innerHTML='<div class="lds-facebook"><div></div><div></div><div></div></div>'
-            
+
+            isload=1;
+
             loadingDiv.classList.add('loading');
             x.appendChild(loadingDiv);
           const response = await fetch(urlx);
@@ -28,14 +34,14 @@ async function getData(urlx){
             result=data.next;
 
             loadingDiv.remove();
+            isload=0;
 }
 
 getData(url);
 
+//onclick add mor 20 cart
 next.addEventListener('click',()=>{
-
-     getData(result);
-           
+     getData(result);   
 })
 
 
