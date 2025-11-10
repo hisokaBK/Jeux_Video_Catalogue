@@ -5,13 +5,19 @@ const next =document.querySelector("#next");
 
 // pour sauvegarder le next url
 let result ;
+let isload;
 
 async function getData(urlx){
+            const loadingDiv = document.createElement('div');
+            loadingDiv.innerHTML='<div class="lds-facebook"><div></div><div></div><div></div></div>'
+            
+            loadingDiv.classList.add('loading');
+            x.appendChild(loadingDiv);
           const response = await fetch(urlx);
           const data = await response.json();
 
           //crete element in dom
-          data.results.forEach(elm=>{
+            data.results.forEach(elm=>{
               const div =document.createElement('div');
               const img =document.createElement('img')
               img.src=`${elm.background_image}`;
@@ -20,12 +26,16 @@ async function getData(urlx){
             })
 
             result=data.next;
+
+            loadingDiv.remove();
 }
 
 getData(url);
 
 next.addEventListener('click',()=>{
-           getData(result);
+
+     getData(result);
+           
 })
 
 
