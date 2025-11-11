@@ -1,7 +1,7 @@
 .loading{
-             display: flex;
-             justify-content: center;
-           
+       
+         display: flex;
+         justify-content: center;  
 }
 
 .lds-facebook,
@@ -45,5 +45,15 @@
     height: 32px;
   }
 }
+
+/*  focus in input shearch   */
+
+.div_input_focus{
+      position: fixed;
+      width: 90%;
+      z-index: 999;
+
+}
+
 
 

@@ -66,5 +66,28 @@ next.addEventListener('click',()=>{
      getData(result);   
 })
 
+//focus in input shearch 
+
+document.querySelector('#inp_shearch').addEventListener('focus',()=>{
+         document.querySelector('#div_shearch').classList.add('div_input_focus');
+})
+
+document.querySelector('#inp_shearch').addEventListener('blur',()=>{
+         document.querySelector('#div_shearch').classList.remove('div_input_focus');
+})
+
+//get valeu input 
+
+let url_search ;
+let valeu_input;
+document.querySelector('#inp_shearch').addEventListener('change',()=>{     
+      valeu_input= document.querySelector('#div_shearch').value;
+      url_search= `https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20&search=${valeu_input}`;
+})
+
+document.querySelector('#button_search').addEventListener('click',()=>{         x.remove();
+            getData(url_search);  
+})
+
 
  
