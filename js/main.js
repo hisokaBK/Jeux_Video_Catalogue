@@ -34,12 +34,12 @@ async function getData(urlx){
           //crete element in dom
           data.results.forEach(elm=>{
               const card =document.createElement('div');
-              card.className='max-w-[70%] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] ';
+              card.className='xsm:max-w-[331px] xsm:max-w-[331px] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] ';
                 
           card.innerHTML = ` <span class='text-end pb-4'><i class="fa-regular fa-heart text-gray-400 "></i></span>
                              <div class="w-full h-40">
                                 
-                               <img src="${elm.background_image}" alt="${elm.name}" class="w-full h-full object-cover rounded min-w-[219px] ">
+                               <img src="${elm.background_image}" alt="${elm.name}" class="w-full h-full object-cover rounded min-w-[289px] ">
                             </div>
 
                             <div class="p-3">
@@ -80,13 +80,16 @@ document.querySelector('#inp_shearch').addEventListener('blur',()=>{
 
 let url_search ;
 let valeu_input;
-document.querySelector('#inp_shearch').addEventListener('change',()=>{     
-      valeu_input= document.querySelector('#div_shearch').value;
+document.querySelector('#inp_shearch').addEventListener('input',(e)=>{     
+      valeu_input= e.target.value;
       url_search= `https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20&search=${valeu_input}`;
 })
 
-document.querySelector('#button_search').addEventListener('click',()=>{         x.remove();
-            getData(url_search);  
+document.querySelector('#button_search').addEventListener('click',()=>{         
+       Array.from(x.children).forEach(node=>{
+                node.remove();
+        }) 
+        getData(url_search);  
 })
 
 
