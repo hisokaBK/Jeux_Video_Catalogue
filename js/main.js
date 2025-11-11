@@ -34,12 +34,12 @@ async function getData(urlx){
           //crete element in dom
           data.results.forEach(elm=>{
               const card =document.createElement('div');
-              card.className='xsm:max-w-[331px] xsm:max-w-[331px] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] ';
+              card.className='max-w-[281px] xsm:max-w-[331px] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] ';
                 
           card.innerHTML = ` <span class='text-end pb-4'><i class="fa-regular fa-heart text-gray-400 "></i></span>
                              <div class="w-full h-40">
                                 
-                               <img src="${elm.background_image}" alt="${elm.name}" class="w-full h-full object-cover rounded min-w-[289px] ">
+                               <img src="${elm.background_image}" alt="${elm.name}" class="w-full h-full object-cover rounded min-w-[240px] xsm:min-w-[440px] ">
                             </div>
 
                             <div class="p-3">
