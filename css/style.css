@@ -1,6 +1,7 @@
 .loading{
              display: flex;
              justify-content: center;
+           
 }
 
 .lds-facebook,
@@ -32,6 +33,7 @@
 .lds-facebook div:nth-child(3) {
   left: 56px;
   animation-delay: 0s;
+  
 }
 @keyframes lds-facebook {
   0% {
@@ -43,4 +45,5 @@
     height: 32px;
   }
 }
+
 
