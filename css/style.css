@@ -50,8 +50,9 @@
 
 .div_input_focus{
       position: fixed;
-      width: 90%;
+      width: 98%;
       z-index: 999;
+      left:60px
 
 }
 

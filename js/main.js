@@ -27,23 +27,23 @@ async function getData(urlx){
 
             loadingDiv.classList.add('loading');
             x.appendChild(loadingDiv);
-            x.className='flex flex-col items-center gap-4'
+            x.className='grid md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 xl:lg:grid-cols-4   gap-4 '
           const response = await fetch(urlx);
           const data = await response.json();
 
           //crete element in dom
           data.results.forEach(elm=>{
               const card =document.createElement('div');
-              card.className='max-w-[281px] xsm:max-w-[331px] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] ';
+              card.className='max-w-[87%] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] sm:max-w-[431px]  md:max-w-[341px] lg:max-w-[281px] justify-self-center';
                 
           card.innerHTML = ` <span class='text-end pb-4'><i class="fa-regular fa-heart text-gray-400 "></i></span>
                              <div class="w-full h-40">
                                 
-                               <img src="${elm.background_image}" alt="${elm.name}" class="w-full h-full object-cover rounded min-w-[240px] xsm:min-w-[440px] ">
+                               <img src="${elm.background_image}" alt="${elm.name}" class="w-full h-full object-cover rounded  min-w-[280px] max-w-[280px] sm:min-w-[340px] md:min-w-[300px] lg:min-w-[240px]">
                             </div>
 
                             <div class="p-3">
-                                  <h3 class="text-sm font-semibold text-white truncate">${elm.name}</h3>
+                                  <h3 class="text-sm  sm:text-[18px] font-semibold text-white truncate">${elm.name}</h3>
                         
                                   <div class="mt-2 flex items-center justify-between text-xs text-gray-500">
                                     <span> ⨂ ${elm.rating }</span>
