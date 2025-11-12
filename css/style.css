@@ -1,41 +1,40 @@
 .loading{
-       
          display: flex;
          justify-content: center;  
 }
 
-.lds-facebook,
-.lds-facebook div {
+.loadings,
+.loadings div {
   box-sizing: border-box;
 }
-.lds-facebook {
+.loadings {
   display: inline-block;
   position: relative;
   width: 80px;
   height: 80px;
 }
-.lds-facebook div {
+.loadings div {
   display: inline-block;
   position: absolute;
   left: 8px;
   width: 16px;
   background: currentColor;
-  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  animation: loadings 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
-.lds-facebook div:nth-child(1) {
+.loadings div:nth-child(1) {
   left: 8px;
   animation-delay: -0.24s;
 }
-.lds-facebook div:nth-child(2) {
+.loadings div:nth-child(2) {
   left: 32px;
   animation-delay: -0.12s;
 }
-.lds-facebook div:nth-child(3) {
+.loadings div:nth-child(3) {
   left: 56px;
   animation-delay: 0s;
   
 }
-@keyframes lds-facebook {
+@keyframes loadings {
   0% {
     top: 8px;
     height: 64px;
@@ -46,15 +45,31 @@
   }
 }
 
+.loadings{
+    display: flex;
+    width:100%;
+    justify-content: center;
+}
+
+
 /*  focus in input shearch   */
 
 .div_input_focus{
       position: fixed;
-      width: 98%;
+      width: 89%;
       z-index: 999;
-      left:60px
+      left:76px
 
 }
+
+/*  favort  */
+
+.favorit{
+     background-color: #9106AC;
+}
+
+
+
 
 
 
