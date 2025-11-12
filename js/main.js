@@ -1,10 +1,13 @@
+// creation localstorage favorits
+let likes =[];
+localStorage.setItem('likes',JSON.stringify(likes));
+
 
 //hero section :
 const hero =document.querySelector('#hero-section');
 hero.style.backgroundImage = "url('./images/Background.png')";
 
-let check_data =false;
-
+//cart continer
 const x =document.querySelector('#x');
 let url="https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20";
 
@@ -36,7 +39,7 @@ async function getData(urlx){
               const card =document.createElement('div');
               card.className='max-w-[87%] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] sm:max-w-[431px]  md:max-w-[341px] lg:max-w-[281px] justify-self-center';
                 
-          card.innerHTML = `<span ${oncklick(addFavorites(this))} class='text-end pb-4'><i class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i></span>
+          card.innerHTML = `<span class='text-end pb-4'><i onclick="addFavorites(this)" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i></span>
                              <div class="w-full h-40">
                                <img src="${elm.background_image}" alt="${elm.name}" class="w-full h-full object-cover rounded  min-w-[280px] max-w-[280px] sm:min-w-[340px] md:min-w-[300px] lg:min-w-[240px]">
                             </div>
@@ -123,7 +126,14 @@ document.querySelector('#inp_shearch').addEventListener('blur',()=>{
 /*favoryt*/
 
 function addFavorites(element){
-         element.classList.add("favorit");
+         if(element.dataset.like=='noLiked'){
+              element.parentNode.innerHTML='<i onclick="addFavorites(this)" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>';
+              element.dataset.like='like';
+         }else{
+              
+              element.parentNode.innerHTML='<i onclick="addFavorites(this)" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>';
+              element.dataset.like='noLike';
+
+         }
 }
 
- 
