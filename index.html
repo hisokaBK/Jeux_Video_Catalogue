@@ -14,41 +14,46 @@
   <body class="bg-[#121212]">
     <header>
     
-          <nav class="bg-[#121212] flex justify-between items-center py-1 px-8 fixed w-screen font-[200] h-12 z-50 ">
+          <nav class="bg-[#121212] flex justify-between items-center py-1 px-8 fixed w-screen font-[200] h-16 z-50">
     
-                <div class="">
-                  <img class="h-10" src="./images/logo_prance.png" alt="logo-prcpl">
+                <div id="img-log">
+                  <a href="./index.html"><img class="h-18 min-w-[126px] max-w-[126px]" src="./images/logo_prance.png" alt="logo-prcpl"></a>
                 </div>
 
-                <div id="div_shearch"><span class="relative pl-4 z-50 left-10" ><i class="fa-solid fa-magnifying-glass text-gray-500  border-r pr-2 pl-2 py-[2px]  hover:text-white " id="button_search"></i></span>
-                  <input  type="search" placeholder="Search ..." id="inp_shearch"  class="bg-neutral-800 border text-gray-200 border-gray-600 rounded-3xl  pl-10 w-[70%]">
+                <div id="div_shearch" class="ml-[16px] w-[60%] justify-start lg:w-[100%] flex sm:justify-center sm:m-0"><span class="relative pl-4 z-50 left-10" ><i class="fa-solid fa-magnifying-glass text-gray-500  border-r border-[#8b7c8e55] pr-2 pl-2 py-[2px]  hover:text-[#9006ac5a] z-50" id="button_search"></i></span>
+                  <input  type="search" placeholder="Search ..." id="inp_shearch"  class="bg-neutral-800 border text-gray-200 border-gray-600 rounded-3xl  pl-10 pr-4 w-[70%] md:w-[70%]">
                 </div>
 
+                <ul class="sm:flex w-[27%] justify-around text-lime-50 font-[400] hidden font-mono">
+                    <li><a class="hover:text-[#9106AC]" href="./index.html">Home</a></li>
+                    <li><a class="hover:text-[#9106AC]" href="./favoris.html">My`Favorites</a></li>
+                </ul>
                 <div id="menuBtn" class="px-2">
-                  <i class="text-white fa-solid fa-bars text-[16px] font-[100]"></i>
+                  <i class="text-white fa-solid fa-bars text-[16px] font-[100] md:none"></i>
                 </div>
       
             </nav>
 
-          <div class="h-12 w-[100%]  mb-6 flex justify-center ">
-             <div class="border-b-[1px] border-gray-700 h-14 w-[70%] "></div> 
+          <div class="h-22 w-[100%]  mb-6 flex justify-center ">
+             <div class="border-b-[1px] border-gray-700 h-24 w-[70%] "></div> 
           </div>
             
     </header>
 
     <main class="flex flex-col gap-16 items-center">
 
-        <div id="hero-section" class="bg-cover bg-center h-[300px] w-[84%] blur-[2px] rounded">
+        <div id="hero-section" class="bg-cover bg-center h-[400px] w-[84%]  rounded flex flex-col items-center justify-center gap-3">
+          <h1 class="text-gray-200 text-3xl font-bold">Discover New Games</h1>
+          <p class="text-gray-200 text-xl">Explore the most popular titles right now</p>
         </div>
-
       
-        <div id="x" class="">
+        <div id="x">
         </div>
   
         <div class="flex justify-center mt-6">
             <button id="next" 
               class="px-6 py-2 rounded-lg text-gray-500 font-semibold  
-                     shadow-md hover:underline hover:shadow-lg  ">
+                     shadow-md hover:underline hover:shadow-lg">
               Next
             </button>
         </div>
