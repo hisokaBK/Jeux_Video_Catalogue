@@ -1,7 +1,7 @@
 let localData=JSON.parse(localStorage.getItem('likes'));
 
 const  fav_continer =document.querySelector("#fav_continer");
-fav_continer.classList='grid md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 xl:lg:grid-cols-4   gap-4 xl:gap-[14px] '
+fav_continer.classList='grid md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 xl:lg:grid-cols-4   gap-4 xl:gap-[14px] md:px-16 xl:px-16 '
 
 localData.forEach(elm=>{
              const card =document.createElement('div');

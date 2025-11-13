@@ -47,8 +47,9 @@
 
 .loadings{
     display: flex;
-    width:100%;
+    position: absolute;
     justify-content: center;
+    align-items: center;
 }
 
 
