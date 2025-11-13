@@ -29,7 +29,7 @@ async function getData(urlx){
 
             loadingDiv.classList.add('loading');
             x.appendChild(loadingDiv);
-            x.className='grid md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 xl:lg:grid-cols-4   gap-4 xl:gap-[14px] '
+            x.className='grid md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:grid-cols-4   gap-4 xl:gap-[18px] '
             const response = await fetch(urlx);
             const data = await response.json();
 
