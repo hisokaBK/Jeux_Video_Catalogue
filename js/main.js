@@ -37,8 +37,26 @@ async function getData(urlx){
           data.results.forEach(elm=>{
               const card =document.createElement('div');
               card.className='max-w-[87%] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] sm:max-w-[431px]  md:max-w-[341px] lg:max-w-[281px] justify-self-center';
+
+          
+          let isliked;
+          let cmp=0;
+          localData.forEach(data=>{
+                  if(data.id ==elm.id ){
+                       cmp++;
+                  }
+          });
+
+          if(cmp==0){
+               isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.rating}','${elm.updated}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>`
+          }else{
+                   isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.rating}','${elm.updated}')" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>`
+          }
+
+
+          
                 
-          card.innerHTML = `<span class='text-end pb-4'><i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.rating}','${elm.updated}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i></span>
+          card.innerHTML = `<span class='text-end pb-4'>${isliked}</span>
                              <div class="w-full h-40">
                                <img src="${elm.background_image}" alt="${elm.name}" class="w-full h-full object-cover rounded  min-w-[280px] max-w-[280px] sm:min-w-[340px] md:min-w-[300px] lg:min-w-[240px]">
                             </div>
