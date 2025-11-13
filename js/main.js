@@ -48,9 +48,9 @@ async function getData(urlx){
           });
 
           if(cmp==0){
-               isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.rating}','${elm.updated}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>`
+               isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.background_image}','${elm.rating}','${elm.updated}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>`
           }else{
-                   isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.rating}','${elm.updated}')" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>`
+                   isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.backgroundImage}','${elm.rating}','${elm.updated}')" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>`
           }
 
 
@@ -142,32 +142,30 @@ document.querySelector('#inp_shearch').addEventListener('blur',()=>{
 
 /*favorit*/
 
+function addFavorites(element,id,name,img,rating,updated){
+        localData=JSON.parse(localStorage.getItem('likes'));
 
-function addFavorites(element,id,name,rating,updated){
-         localData=JSON.parse(localStorage.getItem('likes'));
-
-         if(element.dataset.like=='noLiked'){
+        if(element.dataset.like=='noLiked'){
               for(let i=0;i<localData.length;i++){
                       if(id==localData[i].id){
                        console.log('fgdhyhcujljkvhch');
                        return;
                    }
               }
-
             
-              element.parentNode.innerHTML=`<i onclick="addFavorites(this,'${id}','${name}','${rating}','${updated}')" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>`;
-
-                console.log( id );
+              element.parentNode.innerHTML=`<i onclick="addFavorites(this,'${id}','${name}','${img}','${rating}','${updated}')" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>`;
 
               element.dataset.like='like';
-              localData=[...localData,{'id':id,'name':name,'rating':rating,'updated':updated}];
+              localData=[...localData,{'id':id,'img':img,'name':name,'rating':rating,'updated':updated}];
               localStorage.setItem('likes',JSON.stringify(localData));
 
-         }else{
-              element.parentNode.innerHTML=`<i onclick="addFavorites(this,'${id}','${name}','${rating}','${updated}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>`;
+        }else{
+              element.parentNode.innerHTML=`<i onclick="addFavorites(this,'${id}','${name}','${img}','${rating}','${updated}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>`;
               element.dataset.like='noLike';
               localData=localData.filter(like=>like.id!=id);
               localStorage.setItem('likes',JSON.stringify(localData));
          }
 }
+
+
 
