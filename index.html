@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="icon" href="images/icon-page.png">
+    <link rel="icon" href="./images/icon-page.png">
     <link rel="stylesheet" href="../src/output.css" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -39,12 +39,57 @@
             
     </header>
 
-    <main class="flex flex-col gap-16 items-center">
+    <main class="flex flex-col gap-10 items-center">
 
         <div id="hero-section" class="bg-cover bg-center h-[400px] w-[84%]  rounded flex flex-col items-center justify-center gap-3">
           <h1 class="text-gray-200 text-2xl lg:text-3xl font-bold">Discover New Games</h1>
           <p class="text-gray-200 lg:text-xl ">Explore the most popular titles right now</p>
         </div>
+
+        <div id="filter" class="self-end md:pr-[10%]">
+               <div class="flex gap-4 bg-[#121212]  p-4 rounded-xl mb-4">
+            <label id='genre' class="flex flex-col text-center text-sm text-gray-700">
+                Genre
+                <select id="genreSelect" class="mt-1 bg-[#1a1a1a] border border-white/10 text-gray-200 rounded-lg px-3 py-2 focus:ring-[#9106AC] focus:border-[#9106AC]">
+                    <option value="all">Toutes</option>
+                    <option value="action">Action</option>
+                    <option value="role-playing-games-rpg">RPG</option>
+                    <option value="adventure">Aventure</option>
+                    <option value="strategy">Stratégie</option>
+                    <option value="sports">Sports</option>
+                    <option value="Card">Card</option>
+                    <option value="Family">Family</option>
+                    <option value="Puzzle">Puzzle</option>
+                    <option value="Shooter">Shooter</option>
+                </select>
+            </label>
+
+            <label class="flex flex-col text-center text-sm text-gray-700">
+                Plateforme
+                <select id="platformSelect" class="mt-1 bg-[#1a1a1a] border border-white/10 text-gray-200 rounded-lg px-3 py-2 focus:ring-[#9106AC] focus:border-[#9106AC]">
+                    <option value="all">Toutes</option>
+                    <option value="pc">PC</option>
+                    <option value="playstation5">playstation</option>
+                    <option value="Xbox-old">Xbox</option>
+                    <option value="Linux">Linux</option>
+                    <option value="Nintendo-switch">Nintendo</option>
+                    <option value="Apple-II">Apple</option>
+                    <option value="PSP">PSP</option>
+                    <option value="Web">Web</option>
+                    <option value="iOS">iOS</option>
+                </select>
+            </label>
+
+            <label class="flex flex-col text-center text-sm text-gray-700">
+                Trier par note
+                <select id="sortSelect" class="mt-1 bg-[#1a1a1a] border border-white/10 text-gray-200 rounded-lg px-3 py-2 focus:ring-[#9106AC] focus:border-[#9106AC]">
+                    <option value="desc">Décroissant</option>
+                    <option value="asc">Croissant</option>
+                </select>
+            </label>
+        </div>
+
+</div>
       
         <div id="x">
         </div>

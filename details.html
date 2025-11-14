@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Game Details</title>
+    
+    
+    <link rel="stylesheet" href="../dist/output.css">
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6b0068",
+              "background-light": "#f8f5f8",
+              "background-dark": "#121212",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+  </head>
+  <body class="font-display bg-slate-700">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden bg-black" 
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div
+            class="layout-content-container flex flex-col w-full max-w-[960px] flex-1"
+          >
+            <header
+              class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-10 py-3"
+            >
+              <div class="flex items-center gap-8">
+                <div class="flex items-center gap-4 text-white">
+                  <div class="size-6 text-primary">
+                    <span class="material-symbols-outlined !text-4xl"
+                      >stadia_controller</span
+                    >
+                  </div>
+                  <h2
+                    class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
+                  >
+                    GameTracker
+                  </h2>
+                </div>
+                <div class="flex items-center gap-9">
+                  <a
+                    class="text-white text-sm font-medium leading-normal"
+                    href="#"
+                    >Discover</a
+                  >
+                  <a
+                    class="text-white text-sm font-medium leading-normal"
+                    href="#"
+                    >My Library</a
+                  >
+                  <a
+                    class="text-white text-sm font-medium leading-normal"
+                    href="#"
+                    >Community</a
+                  >
+                  <a
+                    class="text-white text-sm font-medium leading-normal"
+                    href="#"
+                    >News</a
+                  >
+                </div>
+              </div>
+              <div class="flex flex-1 justify-end gap-4">
+                <label class="flex flex-col min-w-40 !h-10 max-w-64">
+                  <div
+                    class="flex w-full flex-1 items-stretch rounded-xl h-full"
+                  >
+                    <div
+                      class="text-white/70 flex border-none bg-white/10 items-center justify-center pl-3 rounded-l-xl border-r-0"
+                    >
+                      <span class="material-symbols-outlined">search</span>
+                    </div>
+                    <input
+                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-white/10 focus:border-none h-full placeholder:text-white/70 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                      placeholder="Search"
+                      value=""
+                    />
+                  </div>
+                </label>
+                <button
+                  class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-white/10 text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+                >
+                  <div class="text-white">
+                    <span class="material-symbols-outlined !text-2xl"
+                      >notifications</span
+                    >
+                  </div>
+                </button>
+                <div
+                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                  data-alt="User avatar placeholder image"
+                  style="
+                    background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCGrYIMlR74zjyEzRf-DjtttjYi7_yle1qj-GGr_KZSRq0FHYmbN9_2rn3rcf_urw3olS_GY74014PysG53O7PkJoNf9sQO-CXLfXwDMOI_YOaH9QtuomGP9Y2vlLybztC2WKHWnN2GrszfPPa2hG7D3W2VUDPq5VexKhkVRT2f1qtkbyE1zgmgL1R2_VB03R3CVZoU8LUuzrKl4wC1uPFgamVWGOgbZ20fialQ5h_FEgX1AonZkKymtN_G2Slt89BbPc7uA3zT4g');
+                  "
+                ></div>
+              </div>
+            </header>
+            <main class="flex-1 flex flex-col pt-5 gap-4">
+              <div class="@container">
+                <div class="@[480px]:px-4 @[480px]:py-3">
+                  <div
+                    class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden @[480px]:rounded-xl min-h-80"
+                    data-alt="A dramatic scene from The Witcher 3 showing Geralt on his horse"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVd4ehFws9OYmnn-eurkeuyu6kGOKVQnYWqLlicEhn4zlJYqKMUNgn5z1vf5zowXAWhrITfQPEdG_rktucbw9EaRG_Uh5W_FLD4IQkXsiFsukLoY50kYdGlYUpTAyi_st6_VZsIF-86YlGfXeMA32Y1YWwWVTRszY2rscygvWzxvWQkW52iCRLyIqRg-xyLUDmPDwU6VugUtSgZP7qOBg2jOwGrnfl-rLrVSS_EjWSXVdwIClRbXywksuonIKJOFHl3G7nGfFU5w');
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div class="px-4 space-y-6">
+                <h1
+                  class="text-white tracking-tight text-5xl font-bold leading-tight text-left"
+                >
+                  The Witcher 3: Wild Hunt
+                </h1>
+                <div class="space-y-4">
+                  <p
+                    class="text-[#A0A0A0] text-base font-normal bg-black leading-relaxed line-clamp-5"
+                  >
+                    The world is in chaos. The air is thick with tension and the
+                    smoke of burned villages. The fearsome Empire of Nilfgaard
+                    has struck again, ravaging the hapless Northern Kingdoms.
+                    The once-mighty who tried to use Geralt for their own gain
+                    are now gone. In these uncertain times, no one can say what
+                    fortune holds in store, who will bring peace to the world
+                    and who will cause it only misery. But a darker and
+                    more-deadly force emerges. The petty men and women
+                    commanding tin-plated armies fail to understand that their
+                    conflict is child’s play compared to the Wild Hunt, the
+                    otherworldly threat which now looms.
+                  </p>
+                  <p
+                    class="text-white text-sm font-medium leading-normal underline cursor-pointer"
+                  >
+                    Read more
+                  </p>
+                </div>
+                <div class="grid grid-cols-3 gap-6 text-sm">
+                  <div>
+                    <p class="text-[#A0A0A0] font-normal">Publisher</p>
+                    <p class="text-white font-medium">CD PROJEKT RED</p>
+                  </div>
+                  <div>
+                    <p class="text-[#A0A0A0] font-normal">Studio</p>
+                    <p class="text-white font-medium">CD PROJEKT RED</p>
+                  </div>
+                  <div>
+                    <p class="text-[#A0A0A0] font-normal">Release Date</p>
+                    <p class="text-white font-medium">May 19, 2015</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-yellow-400 !text-2xl"
+                    style="font-variation-settings: 'FILL' 1"
+                    >star</span
+                  >
+                  <p class="text-white text-lg font-bold">4.9 / 5.0</p>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                  <span
+                    class="inline-block px-4 py-1.5 bg-white/10 text-white text-sm font-medium rounded-full"
+                    >RPG</span
+                  >
+                  <span
+                    class="inline-block px-4 py-1.5 bg-white/10 text-white text-sm font-medium rounded-full"
+                    >Action</span
+                  >
+                  <span
+                    class="inline-block px-4 py-1.5 bg-white/10 text-white text-sm font-medium rounded-full"
+                    >Open World</span
+                  >
+                  <span
+                    class="inline-block px-4 py-1.5 bg-white/10 text-white text-sm font-medium rounded-full"
+                    >Adventure</span
+                  >
+                </div>
+                <div class="flex items-center gap-4 text-white/80">
+                  <svg
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    role="img"
+                    viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>PlayStation</title>
+                    <path
+                      d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.188 16.488c-1.332.78-2.88.948-4.2.612v-3.48h2.304c.18 0 .324-.144.324-.324v-1.62c0-.18-.144-.324-.324-.324H13.8v-2.16c0-1.188.072-2.916 2.052-3.132.36-.036.72.072.972.288.18.144.432.108.576-.072l.9-1.044c.144-.144.108-.396-.072-.54-1.044-.864-2.34-1.332-3.816-1.332-3.456 0-5.724 2.052-5.724 5.364v3.132H6.384c-.18 0-.324.144-.324.324v1.62c0 .18.144.324.324.324h2.304v3.48c-2.088.396-4.5-1.224-4.5-3.42 0-1.224.648-2.304 1.62-2.988.18-.144.216-.396.072-.576l-.9-1.044c-.144-.144-.396-.108-.54.072C3.132 10.8 2.232 12.6 2.232 14.58c0 3.312 3.168 5.4 6.732 4.428V15.9h.18v3.132c.936.144 1.836.072 2.628-.216V15.9h.18v3.816c1.332-.36 3.168-1.512 3.168-3.42 0-.9-.324-1.728-.864-2.412-.144-.18-.108-.432.072-.576l.9 1.044c.144.144.396.108.54-.072.828-1.008 1.224-2.196 1.224-3.42 0-2.268-2.304-3.852-4.932-3.852-1.26 0-2.376.432-3.168 1.152.18.252.324.504.396.792.216.792.324 1.62.324 2.448v.9h.18v-2.304c0-.18.144-.324.324-.324h1.62c.18 0 .324.144.324.324v2.304h.18v-1.62c0-.18.144-.324.324-.324h1.62c.18 0 .324.144.324.324v1.62h.18v-1.188c0-1.008-1.044-1.26-1.8-1.26-.54 0-1.008.216-1.26.612v-.108c-.036-.576-.324-1.044-.756-1.368.9-.756 2.124-1.188 3.42-1.188 3.06 0 5.472 1.836 5.472 4.392 0 1.548-.828 2.952-2.088 3.816z"
+                    ></path>
+                  </svg>
+                  <svg
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    role="img"
+                    viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Xbox</title>
+                    <path
+                      d="M11.998 0A12 12 0 0 0 0 11.998a12 12 0 0 0 11.998 12 12 12 0 0 0 12-12 12 12 0 0 0-12-11.998zm4.31 5.37l-5.372 5.37-3.23-3.23c-1.223 2.05-1.527 4.453-.98 6.77l3.437-3.435 5.37 5.37c2.42-.71 4.31-2.592 5.02-5.018l-4.247-4.247zm-5.372 6.432l-5.37-5.37c-.71 2.42-1.12 5.01-1.12 5.01s2.59-.41 5.01-1.12l1.48-1.48v-.002z"
+                    ></path>
+                  </svg>
+                  <svg
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    role="img"
+                    viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Steam</title>
+                    <path
+                      d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.25c2.324 0 4.545.72 6.405 2.025l-4.38 4.38c-.33-.09-.675-.135-1.02-.135-2.22 0-4.02 1.8-4.02 4.02s1.8 4.02 4.02 4.02c1.245 0 2.355-.57 3.09-1.47l3.12 3.12C16.995 21.435 14.595 22.5 12 22.5c-5.79 0-10.5-4.71-10.5-10.5S6.21 1.5 12 1.5c.39 0 .78.015 1.17.045-1.125 1.485.495 3.42 2.055 2.655L18.45 1.8c.36.21.705.45 1.035.705l-2.445 3.225c1.455.99 1.875 2.925.795 4.35l2.49 2.49c.525-1.02.825-2.16.825-3.36C21.15 5.745 17.415 2.25 12.825 2.25H12zM9.42 12c0-1.425 1.155-2.58 2.58-2.58.6 0 1.155.21 1.59.555l-3.585 3.585c-.345-.435-.585-.99-.585-1.56zm2.58 4.02c-.6 0-1.155-.21-1.59-.555l3.585-3.585c.345.435.585.99.585 1.56 0 1.425-1.155 2.58-2.58 2.58z"
+                    ></path>
+                  </svg>
+                  <svg
+                    class="h-6 w-6"
+                    fill="currentColor"
+                    role="img"
+                    viewbox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Nintendo Switch</title>
+                    <path
+                      d="M19.11 0H4.89C2.189 0 0 2.189 0 4.89v14.22C0 21.811 2.189 24 4.89 24h14.22c2.701 0 4.89-2.189 4.89-4.89V4.89C24 2.189 21.811 0 19.11 0zM7.222 17.65c.31-.31.31-.813 0-1.123L5.337 14.64l.002-5.275c0-.448-.363-.811-.811-.811-.448 0-.811.363-.811.811l.002 6.811c0 .448.363.811.811.811.213 0 .416-.083.565-.241l2.127-2.127zm9.556-11.3c-.31.31-.31.813 0 1.123l1.885 1.887-.002 5.275c0 .448.363.811.811.811.448 0 .811-.363.811-.811l.002-6.811c0-.448-.363-.811-.811-.811-.213 0-.416.083-.565.241l-2.127 2.127z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="px-4 py-6">
+                <button
+                  class="flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-[#6A0066] to-[#450693] py-4 text-lg font-bold text-white shadow-lg transition-all hover:brightness-110 active:scale-[0.98]"
+                >
+                  Add to Favorites
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: 'FILL' 1"
+                    >favorite</span
+                  >
+                </button>
+              </div>
+            </main>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

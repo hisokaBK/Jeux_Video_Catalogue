@@ -1,6 +1,13 @@
 //jib data li localStorage
 let localData=JSON.parse(localStorage.getItem('likes'));
 
+//list icons platforms
+let iconsPlat =[  {'type':'PC','data':'<i class="text-[13px] text-gray-400 fa-brands fa-windows"></i>'}
+                 ,{'type':'PlayStation','data':'<i class="text-[13px] text-gray-400 fa-brands fa-playstation"></i>'}
+                 ,{'type':'Xbox','data':'<i class="text-[13px] text-gray-400 fa-brands fa-xbox"></i>'}
+                 ,{'type':'Linux','data':'<i class="text-[13px] text-gray-400 fa-brands fa-linux"></i>'}
+                 ,{'type':'Nintendo','data':'<i class="text-[13px] text-gray-400 fa-solid fa-gamepad"></i>'}
+               ];
 
 //hero section :
 const hero =document.querySelector('#hero-section');
@@ -18,6 +25,9 @@ let result ;
 let isload=0;
 
 async function getData(urlx){
+          //list platforms
+          let platforms =[];
+
           //f7alat loading ba9i ki loadi
           if(isload===1){
               return ;
@@ -29,16 +39,38 @@ async function getData(urlx){
 
             loadingDiv.classList.add('loading');
             x.appendChild(loadingDiv);
-            x.className='grid md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 xl:lg:grid-cols-4   gap-4 xl:gap-[14px] '
+            x.className='grid md:grid-cols-2 md:gap-x-8 lg:grid-cols-3 lg:grid-cols-4   gap-4 xl:gap-[18px] '
             const response = await fetch(urlx);
             const data = await response.json();
 
           //crete element in dom
-          data.results.forEach(elm=>{
-              const card =document.createElement('div');
-              card.className='max-w-[87%] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] sm:max-w-[431px]  md:max-w-[341px] lg:max-w-[281px] justify-self-center';
+     data.results.forEach(elm=>{
+              
+          const card =document.createElement('div');
+          card.className='max-w-[87%] flex flex-col  rounded-[16px] shadow-md hover:scale-[1.05] transition-transform border border-gray-600  p-5 hover:shadow-[0px_0px_12px_rgba(151,173,172,0.210)] sm:max-w-[431px]  md:max-w-[341px] lg:max-w-[281px] justify-self-center';
 
-          
+        
+
+          //get platforms game 
+
+                elm.parent_platforms.forEach((platf)=>{
+                         platforms=[...platforms,platf.platform.name];
+                })
+                
+                let div_pltf='';
+                platforms.forEach(plat=>{
+                      iconsPlat.forEach(icon=>{
+                           if(icon.type==plat){
+                                
+                                div_pltf+=icon.data;
+                           }
+                           
+                      })
+                })
+
+
+          //check card liked or not
+                  
           let isliked;
           let cmp=0;
           localData.forEach(data=>{
@@ -48,15 +80,15 @@ async function getData(urlx){
           });
 
           if(cmp==0){
-               isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.background_image}','${elm.rating}','${elm.updated}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>`
+               isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.background_image}','${elm.rating}','${elm.updated}','${platforms}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>`
           }else{
-                   isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.backgroundImage}','${elm.rating}','${elm.updated}')" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>`
+               isliked=`<i onclick="addFavorites(this,'${elm.id}','${elm.name}','${elm.backgroundImage}','${elm.rating}','${elm.updated}','${platforms}')" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>`
           }
 
-
-          
                 
-          card.innerHTML = `<span class='text-end pb-4'>${isliked}</span>
+                
+                
+                card.innerHTML = `<div class="flex justify-between h-12" > <div id='plat_catr' class='flex gap-2'>${div_pltf}</div> <span class='text-end pb-4'>${isliked}</span></div>
                              <div class="w-full h-40">
                                <img src="${elm.background_image}" alt="${elm.name}" class="w-full h-full object-cover rounded  min-w-[280px] max-w-[280px] sm:min-w-[340px] md:min-w-[300px] lg:min-w-[240px]">
                             </div>
@@ -72,7 +104,13 @@ async function getData(urlx){
                                         <span>${elm.updated }</span>
                                     </div>
                             </div> `;
+                            
                 x.appendChild(card);
+                
+               div_pltf='';
+               platforms=[];
+                
+
             })
 
              isload=0;
@@ -114,7 +152,6 @@ document.querySelector('#inp_shearch').addEventListener('focus',()=>{
          document.querySelector('#img-log').classList.add("img_log");
 })
 
-
 //get valeu input 
 
 let url_search ;
@@ -134,33 +171,30 @@ document.querySelector('#inp_shearch').addEventListener('blur',()=>{
                 }) 
 
                 getData(url_search);                
-                 
         }
         
 })
 
-
 /*favorit*/
 
-function addFavorites(element,id,name,img,rating,updated){
+function addFavorites(element,id,name,img,rating,updated,platforms){
         localData=JSON.parse(localStorage.getItem('likes'));
 
         if(element.dataset.like=='noLiked'){
               for(let i=0;i<localData.length;i++){
                       if(id==localData[i].id){
-                       console.log('fgdhyhcujljkvhch');
                        return;
                    }
               }
             
-              element.parentNode.innerHTML=`<i onclick="addFavorites(this,'${id}','${name}','${img}','${rating}','${updated}')" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>`;
+              element.parentNode.innerHTML=`<i onclick="addFavorites(this,'${id}','${name}','${img}','${rating}','${updated}','${platforms}')" class="text-[#9006ac9d]  hover:text-gray-400  fa-solid fa-heart"></i>`;
 
               element.dataset.like='like';
-              localData=[...localData,{'id':id,'img':img,'name':name,'rating':rating,'updated':updated}];
+              localData=[...localData,{'id':id,'img':img,'name':name,'rating':rating,'updated':updated,'platforms':platforms}];
               localStorage.setItem('likes',JSON.stringify(localData));
 
         }else{
-              element.parentNode.innerHTML=`<i onclick="addFavorites(this,'${id}','${name}','${img}','${rating}','${updated}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>`;
+              element.parentNode.innerHTML=`<i onclick="addFavorites(this,'${id}','${name}','${img}','${rating}','${updated}','${platforms}')" data-like="noLiked" class="fa-regular fa-heart text-gray-400 hover:text-[#9006ac9d] "></i>`;
               element.dataset.like='noLike';
               localData=localData.filter(like=>like.id!=id);
               localStorage.setItem('likes',JSON.stringify(localData));
@@ -168,4 +202,40 @@ function addFavorites(element,id,name,img,rating,updated){
 }
 
 
+//add details :
 
+localStorage.setItem('details','{}');
+//filter----->platforms
+document.querySelector('#platformSelect').addEventListener('change',(e)=>{
+           let url ;
+           Array.from(x.children).forEach(node=>{
+                 node.remove();
+                }) 
+          let val=e.target.value;
+          if(val=='Toutes'){
+             url="https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20";
+             
+          }else{
+             url =`https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20&platform=${val}`;
+          }
+          getData(url);
+
+})
+
+//filter----->Genres
+
+document.querySelector('#genreSelect').addEventListener('change',(e)=>{
+           let url ;
+           Array.from(x.children).forEach(node=>{
+                 node.remove();
+                }) 
+          let val=e.target.value;
+          if(val=='Toutes'){
+             url="https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20";
+             
+          }else{
+             url =`https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20&genre=${val}`;
+          }
+          getData(url);
+
+})
