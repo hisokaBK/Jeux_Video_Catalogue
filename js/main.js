@@ -168,4 +168,6 @@ function addFavorites(element,id,name,img,rating,updated){
 }
 
 
+//add details :
 
+localStorage.setItem('details','{}');

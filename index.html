@@ -39,12 +39,48 @@
             
     </header>
 
-    <main class="flex flex-col gap-16 items-center">
+    <main class="flex flex-col gap-10 items-center">
 
         <div id="hero-section" class="bg-cover bg-center h-[400px] w-[84%]  rounded flex flex-col items-center justify-center gap-3">
           <h1 class="text-gray-200 text-2xl lg:text-3xl font-bold">Discover New Games</h1>
           <p class="text-gray-200 lg:text-xl ">Explore the most popular titles right now</p>
         </div>
+
+        <div id="filter" class="self-end pr-[10%]">
+               <div class="flex gap-4 bg-[#121212]  p-4 rounded-xl mb-4">
+            <label class="flex flex-col text-sm text-gray-300">
+                Genre
+                <select id="genreSelect" class="mt-1 bg-[#1a1a1a] border border-white/10 text-gray-200 rounded-lg px-3 py-2 focus:ring-[#9106AC] focus:border-[#9106AC]">
+                    <option value="all">Tous</option>
+                    <option value="action">Action</option>
+                    <option value="rpg">RPG</option>
+                    <option value="adventure">Aventure</option>
+                    <option value="strategy">Stratégie</option>
+                    <option value="sports">Sports</option>
+                </select>
+            </label>
+
+            <label class="flex flex-col text-sm text-gray-300">
+                Plateforme
+                <select id="platformSelect" class="mt-1 bg-[#1a1a1a] border border-white/10 text-gray-200 rounded-lg px-3 py-2 focus:ring-[#9106AC] focus:border-[#9106AC]">
+                    <option value="all">Toutes</option>
+                    <option value="pc">PC</option>
+                    <option value="playstation">PlayStation</option>
+                    <option value="xbox">Xbox</option>
+                    <option value="nintendo">Nintendo</option>
+                </select>
+            </label>
+
+            <label class="flex flex-col text-sm text-gray-300">
+                Trier par note
+                <select id="sortSelect" class="mt-1 bg-[#1a1a1a] border border-white/10 text-gray-200 rounded-lg px-3 py-2 focus:ring-[#9106AC] focus:border-[#9106AC]">
+                    <option value="desc">Décroissant</option>
+                    <option value="asc">Croissant</option>
+                </select>
+            </label>
+        </div>
+
+</div>
       
         <div id="x">
         </div>
