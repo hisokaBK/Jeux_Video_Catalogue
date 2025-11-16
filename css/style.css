@@ -63,6 +63,21 @@
 
 }
 
+/* description in details */
+
+.description{
+    height: 120px;
+    overflow: hidden;
+    
+    
+}
+
+.descriptionX{
+     height:100%;
+     overflow: visible;
+}
+
+
 
 
 
