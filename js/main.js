@@ -165,7 +165,7 @@ let url_search ;
 let valeu_input='';
 document.querySelector('#inp_shearch').addEventListener('input',(e)=>{     
       valeu_input= e.target.value;
-      url_search= `https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20&search=${valeu_input}`;
+      url_search= `https://api.rawg.io/api/games?key=e7cef097d7b447a8babd4c45651f0df4&page=1&limit=20&search=${valeu_input}`;
 })
 
 document.querySelector('#inp_shearch').addEventListener('blur',()=>{ 
@@ -221,10 +221,10 @@ document.querySelector('#platformSelect').addEventListener('change',(e)=>{
                 }) 
           let val=e.target.value;
           if(val=='Toutes'){
-             url="https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20";
+             url="https://api.rawg.io/api/games?key=e7cef097d7b447a8babd4c45651f0df4&page=1&limit=20";
              
           }else{
-             url =`https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20&platform=${val}`;
+             url =`https://api.rawg.io/api/games?key=e7cef097d7b447a8babd4c45651f0df4&page=1&limit=20&platform=${val}`;
           }
           getData(url);
 
@@ -239,10 +239,10 @@ document.querySelector('#genreSelect').addEventListener('change',(e)=>{
                 }) 
           let val=e.target.value;
           if(val=='Toutes'){
-             url="https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20";
+             url="https://api.rawg.io/api/games?key=e7cef097d7b447a8babd4c45651f0df4&page=1&limit=20";
              
           }else{
-             url =`https://debuggers-games-api.duckdns.org/api/games?page=1&limit=20&genre=${val}`;
+             url =`https://api.rawg.io/api/games?key=e7cef097d7b447a8babd4c45651f0df4&page=1&limit=20&genre=${val}`;
           }
           getData(url);
 
