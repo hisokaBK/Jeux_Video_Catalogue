@@ -1,96 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="icon" href="./images/icon-page.png">
-    <link rel="stylesheet" href="../src/output.css" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="./js/favoris.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#121212">
+  <meta name="description" content="Discover games, filter by genre and platform, and save favorites with GameExplorer.">
+  <title>My Favorites | GameExplorer</title>
+  <link rel="icon" href="./images/icon-page.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/main.js" defer></script>
+  <script src="./js/favoris.js" defer></script>
 </head>
-<body class="bg-[#121212] ">'
-    <header class="mt-[-25px]">
-        
-      
-         
-
-          <nav class="bg-[#121212] flex justify-between items-center py-1 px-8 fixed  w-screen font-[200] h-16 z-50">
-    
-                <div id="img-log">
-                  <a href="./index.html"><img class="h-18 min-w-[126px] max-w-[126px]" src="./images/logo_prance.png" alt="logo-prcpl"></a>
-                </div>
-
-                 <div id="div_shearch" class=" ml-[-95px] md:ml-[16px] w-[60%] justify-start lg:w-[100%] flex sm:justify-center sm:m-0"><span class="relative pl-4 z-50 left-10" ><i class="fa-solid fa-magnifying-glass text-gray-500  border-r border-[#8b7c8e55] pr-2 pl-2 py-[2px]  hover:text-[#9006ac5a] z-50" id="button_search"></i></span>
-                  <input  type="search" placeholder="Search ..." id="inp_shearch"  class="bg-neutral-800 border text-gray-200 border-gray-600 relative  rounded-3xl  pl-10 pr-4 focus:w-[300px] w-[100%] md:w-[70%] md:focus:w-[70%]">
-                </div>
-
-                <ul class="sm:flex w-[27%] justify-around text-lime-50 font-[400] hidden font-mono">
-                    <li><a class="hover:text-[#9106AC]" href="./index.html" id="fvr">Home</a></li>
-                </ul>
-                <div id="menuBtn" class="px-2">
-                  <i id="sidebar-btn"  class="text-gray-400 fa-solid fa-bars text-[16px] font-[100] hover:cursor-pointer hover:text-white"></i>
-                </div>
-      
-            </nav>
-
-          <div class="h-22 w-[100%]  mb-6 flex justify-center ">
-             <div class="border-b-[1px] border-gray-700 h-24 w-[70%] "></div> 
-          </div>
-            
-    </header>
-
-    <main>
-        
-          <div id="fav_continer">
-         </div>
-        
-    </main>
-    
-
-    <div id="sidebar" class="fixed top-0 right-0 h-full w-64 bg-black text-white shadow-lg flex-col p-4 z-50 hidden transform translate-x-64 transition-transform duration-300">
-    
-      <div class="flex justify-end mb-4">
-        <button id="sidebar-close" class="text-white text-2xl hover:text-red-500">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-    
-      <div class="text-2xl font-bold mb-6 text-right">HisoKa Games</div>
-    
-      <ul class="space-y-4 text-lg">
-    
-         <li class="flex items-center gap-3 justify-end cursor-pointer text-gray-400 hover:text-white" >
-              <a href="./index.html">Home <i class="fa-solid fa-house"></i> </a>
-            </li>
-        
-            <li class="flex items-center gap-3 justify-end cursor-pointer text-gray-400 hover:text-white" >
-               <a href="./favoris.html">Favorite <i class="fa-solid fa-heart"></i></a>
-            </li>
-    
-        <li class="flex items-center gap-3 justify-end cursor-pointer text-gray-400 hover:text-white" >
-          Social <i class="fa-solid fa-share-nodes"></i>
-        </li>
-    
-        <div class="  mt-1 text-xl text-gray-400">
-          <div class="text-end p-2 hover:text-white cursor-pointer">Facebook <i class="fa-brands  fa-facebook cursor-pointer"></i> </div>
-          <div class="text-end p-2 hover:text-white cursor-pointer">Twitter <i class="fa-brands fa-twitter   cursor-pointer"></i> </div>
-          <div class="text-end p-2 hover:text-white cursor-pointer">Instagram <i class="fa-brands fa-instagram  cursor-pointer"></i> </div>
-        </div>
-    
-        <li class="flex items-center gap-3 justify-end cursor-pointer text-gray-400 hover:text-white">
-          Sign In <i class="fa-solid fa-right-to-bracket"></i> 
-        </li>
-    
-        <li class="flex items-center gap-3 justify-end cursor-pointer text-gray-400 hover:hover:text-white">
-          Sign Up <i class="fa-solid fa-user-plus"></i> 
-        </li>
-    
-      </ul>
-    
+<body>
+<header class="site-header">
+  <nav class="nav-inner page-width" aria-label="Main navigation">
+    <a class="brand" href="./index.html" aria-label="GameExplorer home">
+      <img src="./images/logo_prance.png" alt="" width="112" height="46">
+      <span class="visually-hidden">GameExplorer</span>
+    </a>
+    <form id="favoriteSearchForm" class="nav-search" role="search">
+      <label class="visually-hidden" for="favoriteSearch">Search your favorites</label>
+      <input id="favoriteSearch" type="search" placeholder="Search your favorites…" autocomplete="off">
+      <button type="submit" aria-label="Search favorites">Search</button>
+    </form>
+    <div class="nav-actions">
+      <a class="nav-favorites active" href="./favoris.html">♥ <span class="favorites-label">Favorites</span> <span data-favorites-count class="count-badge">0</span></a>
+      <button type="button" id="sidebar-btn" class="menu-button" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation">☰</button>
     </div>
-
-
+  </nav>
+</header>
+<main class="page-width favorites-page">
+  <section class="section-heading favorites-heading">
+    <div><p class="eyebrow">YOUR PERSONAL COLLECTION</p>
+      <h1>My Favorites</h1>
+      <p class="muted">Your saved games stay on this browser.</p>
+    </div>
+    <div class="favorites-actions">
+      <label for="favoriteSort">Sort</label>
+      <select id="favoriteSort" aria-label="Sort favorite games">
+        <option value="recent">Recently saved</option>
+        <option value="rating">Highest rated</option>
+        <option value="name">Name A–Z</option>
+      </select>
+      <button type="button" id="clearFavorites" class="secondary-button">Clear all</button>
+    </div>
+  </section>
+  <p class="muted" id="favoriteResultCount" aria-live="polite"></p>
+  <p class="status-message" id="favoriteFeedback" role="status" hidden></p>
+  <div id="favoritesGrid" class="games-grid"></div>
+  <section id="favoritesEmpty" class="empty-state" hidden>
+    <div class="empty-symbol" aria-hidden="true">♡</div>
+    <h2>No favorites yet</h2>
+    <p>Explore the catalog and click the heart on any game to save it here.</p>
+    <a href="./index.html#catalogue" class="primary-button">Explore games</a>
+  </section>
+</main>
+<div id="sidebar-overlay" class="sidebar-overlay" hidden></div>
+<aside id="sidebar" class="sidebar" aria-label="Explore GameExplorer" aria-hidden="true" hidden>
+  <div class="sidebar-top">
+    <h2>Explore</h2>
+    <button type="button" id="sidebar-close" class="sidebar-close" aria-label="Close navigation">×</button>
+  </div>
+  <p class="sidebar-caption">HisoKa Games</p>
+  <section class="sidebar-group" aria-label="Navigation">
+    <h3>Navigation</h3>
+    <a href="./index.html">⌂ &nbsp; All games</a>
+    <a href="./favoris.html">♥ &nbsp; My favorites <span data-favorites-count class="count-badge">0</span></a>
+  </section>
+  <section class="sidebar-group" aria-label="Explore games">
+    <h3>Discover</h3>
+    <a href="./index.html?sort=-rating#catalogue">★ &nbsp; Top rated</a>
+    <a href="./index.html?sort=-released#catalogue">↗ &nbsp; New releases</a>
+    <a href="./index.html?genre=action#catalogue">◈ &nbsp; Action</a>
+    <a href="./index.html?genre=role-playing-games-rpg#catalogue">◇ &nbsp; Role-playing (RPG)</a>
+    <a href="./index.html?genre=strategy#catalogue">◉ &nbsp; Strategy</a>
+    <a href="./index.html?genre=adventure#catalogue">⌁ &nbsp; Adventure</a>
+  </section>
+  <section class="sidebar-group" aria-label="Resources">
+    <h3>Resources</h3>
+    <a href="https://rawg.io/apidocs" target="_blank" rel="noopener noreferrer">RAWG API documentation ↗</a>
+    <a href="https://github.com/hisokaBK/Jeux_Video_Catalogue" target="_blank" rel="noopener noreferrer">Project on GitHub ↗</a>
+  </section>
+  <p class="sidebar-foot">Browse games. Save the ones you love.</p>
+</aside>
+<footer class="site-footer page-width">Saved locally in your browser · <a href="./index.html">Browse all games</a></footer>
 </body>
 </html>
