@@ -1,6 +1,9 @@
 ![Capture d’écran de GameExplorer — catalogue de jeux](images/gameexplorer-preview.webp)
 
 # 🎮 GameExplorer
+
+🎮 **Live Demo:** [Play GameExplorer online](https://hisokabk.github.io/Jeux_Video_Catalogue/)
+
 Une application web qui permet de découvrir, rechercher et filtrer des jeux vidéo populaires via l’API RAWG.
 
 ## 📖 Description
